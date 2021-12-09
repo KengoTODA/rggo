@@ -10,8 +10,12 @@ jobs:
       - uses: actions/setup-go@v2
         with:
           go-version: '^1.17.3'
+      - run: go version
       - run: |
-          go version
           cd firstProgram/wc
+          go test -v
+          go build
+      - run: |
+          cd interacting/todo
           go test -v
           go build
